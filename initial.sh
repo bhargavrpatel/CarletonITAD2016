@@ -18,7 +18,7 @@ virtualenv ~/default
 
 cecho $YELLOW "Installing Python Dependencies..."
 source ~/default/bin/activate
-pip install -rq ./requirements.txt
+pip install -r requirements.txt
 
 cecho $YELLOW "Setting auto sourcing of default virtualenv"
 echo "source `which activate.sh`" >> ~/.bashrc
