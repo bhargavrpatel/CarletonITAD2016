@@ -10,3 +10,4 @@ RESET="$(tput sgr0)"
 function cecho {
   echo "$1$2$RESET"
 }
+

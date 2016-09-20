@@ -22,10 +22,10 @@ function sequential {
     cecho $YELLOW "Manifest string: '$manifest'"
     cecho $YELLOW "Manifest path: '$manifest_path'"
     exit 1
-  fi    
+  fi
 
-  cecho $GREEN "There is a newer manifest, updating..."
-  echo "Running the following manifest file: " $manifest
+  #cecho $GREEN "There is a newer manifest, updating..."
+  #echo "Running the following manifest file: " $manifest
   /bin/bash $manifest_path
 }
 
@@ -58,7 +58,7 @@ then
   # Differ
   sequential
 else
-  nop      
+  nop
 fi
 echo "Have a good day..."
-exit 0;
+exit 0
