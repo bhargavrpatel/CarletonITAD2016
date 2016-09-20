@@ -50,8 +50,8 @@ if [ ! -f ./.manifest_current ]; then
 fi
 
 ## Check if there is a manifest update
-#echo "Cloning remote..."
-#git pull --rebase
+echo "Cloning remote..."
+git pull --rebase
 
 if ! cmp -s .manifest .manifest_current;
 then
