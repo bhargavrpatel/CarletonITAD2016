@@ -20,7 +20,12 @@ cecho $YELLOW "Installing Python Dependencies..."
 source ~/default/bin/activate
 pip install -r requirements.txt
 
-cecho $YELLOW "Setting auto sourcing of default virtualenv"
-echo "source `which activate.sh`" >> ~/.bashrc
+# Add stuff to ~/.bashrc
+ACTIVATE="source `which activate.sh`"
+grep "$ACTIVATE" ~/.bashrc || cecho $YELLOW "Setting auto sourcing of venv in ~/.bashrc" ; echo "$ACTIVATE" >> ~/.bashrc
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+BOOTSTRAPCMD="alias bootstrap=/bin/bash $SCRIPTPATH/bootstrap.sh"
+grep "$BOOTSTRAPCMD" ~/.bashrc || cecho $YELLOW "Adding command 'bootstrap' in ~/.bashrc"; echo "$BOOTSTRAPCMD" >> ~/.bashrc
 
 cecho $GREEN "Initial setup complete"
