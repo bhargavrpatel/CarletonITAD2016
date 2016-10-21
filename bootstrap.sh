@@ -5,9 +5,9 @@
 ################
 source ./utils.sh
 
-########################
-# Function definitions #
-########################
+#########################
+## Function definitions #
+#########################
 
 # Sequential steps
 # 1) Fetches latest manifest timestamp and checks for validity
